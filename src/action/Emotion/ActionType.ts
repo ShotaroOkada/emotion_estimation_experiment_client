@@ -1,0 +1,7 @@
+enum EmotionActionType {
+  GET_EMOTION_REQUEST = 'GET_EMOTION_REQUEST',
+  GET_EMOTION_SUCCESS = 'GET_EMOTION_SUCCESS',
+  GET_EMOTION_FAIL = 'GET_EMOTION_FAIL'
+}
+
+export default EmotionActionType
