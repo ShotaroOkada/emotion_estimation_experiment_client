@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom';
 
 const InputPage = () => {
   const isLoggedIn = useSelector<RootState, RootState['user']['isLoggedIn']>(state => state.user.isLoggedIn);
-
   return (
     <div>
       {!isLoggedIn && <Redirect to={'/login'} />}

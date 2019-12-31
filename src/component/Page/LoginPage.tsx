@@ -13,8 +13,8 @@ const LoginPage = () => {
 
   const onClick = () => {
     if (inputUserId === '') return;
-
     dispatch(login.success({ id: inputUserId }));
+    sessionStorage.setItem('userId', inputUserId);
     history.push('/');
     setInputUserState('');
   }
