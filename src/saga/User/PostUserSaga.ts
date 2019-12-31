@@ -1,16 +1,22 @@
-import { login } from "../../action/User/ActionCreator";
 import { PromiseGenericType } from "../../utils/Type";
 import { postUserApi } from "../../api/User/PostUserApi";
 import { call, put, select } from 'redux-saga/effects';
 import RootState from "../../state";
+import UserActionType from "../../action/User/ActionType";
+import UserAction from "../../action/User/Action";
+import { login } from "../../action/User/ActionCreator";
 
-export function* postUserSaga(action: ReturnType<typeof login.request>) {
+export function* postUserSaga() {
   const state: RootState = yield select()
-  const user_id = state.User.id
+  const user_id = state.user.id
   const response: PromiseGenericType<ReturnType<typeof postUserApi>> = yield call(
     postUserApi,
     user_id
   );
 
-
+  if (response.status === 200) {
+    yield put(login.success({ id: user_id }))
+  } else {
+    yield put(login.failure(new Error('failure login')))
+  }
 }

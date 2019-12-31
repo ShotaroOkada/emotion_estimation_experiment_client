@@ -1,12 +1,12 @@
-import TextAction from "../action/Text/Action";
-import TextActionType from "../action/Text/ActionType";
+import TextAction from "../action/Texts/Action";
+import TextActionType from "../action/Texts/ActionType";
 import Texts from "../state/Texts";
 
 const initialState: Texts = []
 
 const Texts = (state: Texts = initialState, action: TextAction): Texts => {
   switch (action.type) {
-    case TextActionType.GET_TEXT_SUCCESS:
+    case TextActionType.GET_TEXTS_SUCCESS:
       return [
         ...state,
         ...action.payload

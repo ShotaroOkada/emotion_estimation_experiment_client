@@ -1,5 +1,5 @@
 import * as ActionCreators from './ActionCreator';
 import { ActionType } from 'typesafe-actions';
 
-type EvaluationAction = ActionType<typeof ActionCreators>;
-export default EvaluationAction
+type EvaluationsAction = ActionType<typeof ActionCreators>;
+export default EvaluationsAction

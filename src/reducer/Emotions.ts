@@ -1,6 +1,6 @@
 import Emotions from "../state/Emotions";
-import EmotionAction from "../action/Emotion/Action";
-import EmotionActionType from "../action/Emotion/ActionType";
+import EmotionAction from "../action/Emotions/Action";
+import EmotionActionType from "../action/Emotions/ActionType";
 
 const initialState: Emotions = {}
 

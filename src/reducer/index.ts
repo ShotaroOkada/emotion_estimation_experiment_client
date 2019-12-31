@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import Emotions from './Emotions';
-import Texts from './Texts';
-import User from './User'
+import emotions from './Emotions';
+import texts from './Texts';
+import user from './User'
 
 const rootReducer = combineReducers({
-  User,
-  Texts,
-  Emotions
+  user,
+  texts,
+  emotions
 });
 
 export default rootReducer

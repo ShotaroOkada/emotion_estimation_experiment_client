@@ -1,9 +1,9 @@
 import { createAsyncAction } from "typesafe-actions"
 import EmotionActionType from "./ActionType";
-import { GetEmotionParam, GetEmotionResponse } from "../../api/Emotion/GetEmotionApi";
+import { GetEmotionsParam, GetEmotionsResponse } from "../../api/Emotions/GetEmotionsApi";
 
-export const getEmotion = createAsyncAction(
+export const getEmotions = createAsyncAction(
   EmotionActionType.GET_EMOTION_REQUEST,
   EmotionActionType.GET_EMOTION_SUCCESS,
   EmotionActionType.GET_EMOTION_FAIL
-)<GetEmotionParam, GetEmotionResponse, Error>();
+)<GetEmotionsParam, GetEmotionsResponse, Error>();

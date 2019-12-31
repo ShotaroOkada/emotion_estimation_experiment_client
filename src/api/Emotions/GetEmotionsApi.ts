@@ -1,15 +1,15 @@
 import Axios from "../Axios"
 import { EstimatedEmotions } from "./Model"
 
-export type GetEmotionParam = {
+export type GetEmotionsParam = {
   text: string
 }
 
-export type GetEmotionResponse = EstimatedEmotions
+export type GetEmotionsResponse = EstimatedEmotions
 
-export async function getEmotionApi(user_id: string, { text }: GetEmotionParam) {
+export async function getEmotionsApi(user_id: string, { text }: GetEmotionsParam) {
   try {
-    return await Axios.get<GetEmotionResponse>('/emotion', {
+    return await Axios.get<GetEmotionsResponse>('/emotion', {
       headers: {
         user_id
       },

@@ -1,0 +1,7 @@
+enum TextsActionType {
+  GET_TEXTS_REQUEST = 'GET_TEXTS_REQUEST',
+  GET_TEXTS_SUCCESS = 'GET_TEXTS_SUCCESS',
+  GET_TEXTS_FAIL = 'GET_TEXTS_FAIL'
+}
+
+export default TextsActionType
