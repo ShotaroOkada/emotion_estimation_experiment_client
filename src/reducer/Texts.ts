@@ -4,7 +4,7 @@ import Texts from "../state/Texts";
 
 const initialState: Texts = []
 
-const Texts = (state: Texts = initialState, action: TextAction): Texts => {
+export default (state: Texts = initialState, action: TextAction): Texts => {
   switch (action.type) {
     case TextActionType.GET_TEXTS_SUCCESS:
       return [
@@ -15,5 +15,3 @@ const Texts = (state: Texts = initialState, action: TextAction): Texts => {
       return state;
   }
 }
-
-export default Texts;

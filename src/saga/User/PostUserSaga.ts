@@ -2,8 +2,6 @@ import { PromiseGenericType } from "../../utils/Type";
 import { postUserApi } from "../../api/User/PostUserApi";
 import { call, put, select } from 'redux-saga/effects';
 import RootState from "../../state";
-import UserActionType from "../../action/User/ActionType";
-import UserAction from "../../action/User/Action";
 import { login } from "../../action/User/ActionCreator";
 
 export function* postUserSaga() {

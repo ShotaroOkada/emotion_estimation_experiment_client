@@ -4,7 +4,7 @@ import EmotionActionType from "../action/Emotions/ActionType";
 
 const initialState: Emotions = {}
 
-const Emotions = (state: Emotions = initialState, action: EmotionAction): Emotions => {
+export default (state: Emotions = initialState, action: EmotionAction): Emotions => {
   switch (action.type) {
     case EmotionActionType.GET_EMOTION_SUCCESS:
       return {
@@ -14,5 +14,3 @@ const Emotions = (state: Emotions = initialState, action: EmotionAction): Emotio
       return state;
   }
 }
-
-export default Emotions;

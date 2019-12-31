@@ -6,7 +6,7 @@ const initialState: User = {
   id: ''
 }
 
-const User = (state: User = initialState, action: UserAction): User => {
+export default (state: User = initialState, action: UserAction): User => {
   switch (action.type) {
     case UserActionType.LOGIN_SUCCESS:
       return {
@@ -17,5 +17,3 @@ const User = (state: User = initialState, action: UserAction): User => {
       return state;
   }
 }
-
-export default User;
