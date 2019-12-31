@@ -1,5 +1,6 @@
 type User = {
-  id: string
+  id: string,
+  isLoggedIn: boolean
 }
 
 export default User

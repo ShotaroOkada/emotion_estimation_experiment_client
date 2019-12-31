@@ -3,7 +3,8 @@ import UserAction from "../action/User/Action";
 import UserActionType from "../action/User/ActionType";
 
 const initialState: User = {
-  id: ''
+  id: '',
+  isLoggedIn: false
 }
 
 export default (state: User = initialState, action: UserAction): User => {
@@ -11,7 +12,8 @@ export default (state: User = initialState, action: UserAction): User => {
     case UserActionType.LOGIN_SUCCESS:
       return {
         ...state,
-        id: action.payload.id
+        id: action.payload.id,
+        isLoggedIn: true
       }
     default:
       return state;
