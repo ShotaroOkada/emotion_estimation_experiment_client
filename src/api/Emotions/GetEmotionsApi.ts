@@ -1,8 +1,9 @@
 import Axios from "../Axios"
 import { EstimatedEmotions } from "./Model"
+import { Text } from "../../state/Texts"
 
 export type GetEmotionsParam = {
-  text: string
+  text: Text
 }
 
 export type GetEmotionsResponse = EstimatedEmotions

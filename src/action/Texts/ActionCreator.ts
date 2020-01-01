@@ -11,3 +11,11 @@ export const getTexts = createAsyncAction(
 export const getNullText = createAction(
   TextActionType.GET_NULL_TEXT
 )<undefined>();
+
+export const addInputedTexts = createAction(
+  TextActionType.ADD_INPUTED_TEXTS
+)<Texts>();
+
+export const addInputTextsRequest = createAction(
+  TextActionType.ADD_INPUTED_TEXTS_REQUEST
+)<{ [key: string]: string }>()

@@ -12,7 +12,6 @@ export function* getTextsSaga() {
     getTextsApi,
     user_id
   );
-  console.log(response)
   if (response.status === 200 && response.data) {
     const constPostStoreData: Texts = Object.entries(response.data).map(([_, value]) => {
       return value

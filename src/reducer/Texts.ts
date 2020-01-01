@@ -11,6 +11,11 @@ export default (state: Texts = initialState, action: TextAction): Texts => {
         ...state,
         ...action.payload
       ]
+    case TextActionType.ADD_INPUTED_TEXTS:
+      return [
+        ...state,
+        ...action.payload
+      ]
     default:
       return state;
   }

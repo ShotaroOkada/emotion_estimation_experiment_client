@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Forms: React.FC = () => {
-  const [inputForms, setInputForms] = useState({
-    a: '', b: '', c: '', d: '', e: ''
-  })
+type Props = {
+  inputTexts: {
+    [key: string]: string
+  },
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputForms({ ...inputForms, [e.target.name]: e.currentTarget.value })
-  }
+const Forms: React.FC<Props> = (props) => {
+  const { inputTexts, handleChange } = props
 
   return (
     <div>
-      {Object.entries(inputForms).map(([key, value]) =>
-        <input type="text" key={key} name={key} value={value} onChange={handleFormChange} />
+      {Object.entries(inputTexts).map(([key, value]) =>
+        <input type="text" key={key} name={key} value={value} onChange={handleChange} />
       )}
     </div>
   )
