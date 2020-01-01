@@ -3,11 +3,11 @@ import { login } from '../../action/User/ActionCreator';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   const [inputUserId, setInputUserState] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
-  const onInputUserIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputUserIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputUserState(e.currentTarget.value)
   }
 
@@ -21,7 +21,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <input type="text" value={inputUserId} onChange={onInputUserIdChange} />
+      <input type="text" value={inputUserId} onChange={handleInputUserIdChange} />
       <button onClick={onClick}>ログイン</button>
     </div>
   )

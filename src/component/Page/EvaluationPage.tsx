@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EvaluationPage = () => {
+const EvaluationPage: React.FC = () => {
   return (
     <div>
       Evaluation page
