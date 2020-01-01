@@ -3,6 +3,7 @@ import { select, call, put } from "redux-saga/effects"
 import { PromiseGenericType } from "../../utils/Type";
 import { getTextsApi } from "../../api/Texts/GetTextsApi";
 import { getTexts, getNullText } from "../../action/Texts/ActionCreator";
+import Texts from "../../state/Texts";
 
 export function* getTextsSaga() {
   const state: RootState = yield select();
@@ -11,9 +12,12 @@ export function* getTextsSaga() {
     getTextsApi,
     user_id
   );
-  console.log(response.data)
+  console.log(response)
   if (response.status === 200 && response.data) {
-    yield put(getTexts.success(response.data))
+    const constPostStoreData: Texts = Object.entries(response.data).map(([_, value]) => {
+      return value
+    })
+    yield put(getTexts.success(constPostStoreData))
   } else if (response.status === 200 && response.data === null) {
     yield put(getNullText())
   } else {

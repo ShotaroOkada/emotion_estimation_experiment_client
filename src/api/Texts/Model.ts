@@ -3,6 +3,8 @@ export type Text = {
   previous_flag: boolean
 }
 
-type Texts = Text[]
+type Texts = {
+  [key: string]: Text
+}
 
 export default Texts
