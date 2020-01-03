@@ -4,7 +4,7 @@ import Button from '../Atom/Button'
 import { useDispatch } from 'react-redux';
 import { addInputTextsRequest } from '../../action/Texts/ActionCreator';
 
-const FormsAndButton: React.FC = () => {
+const TextInputArea: React.FC = () => {
   const dispatch = useDispatch()
   const [inputTexts, setInputTexts] = useState({
     a: '', b: '', c: '', d: '', e: ''
@@ -26,4 +26,4 @@ const FormsAndButton: React.FC = () => {
   )
 }
 
-export default FormsAndButton
+export default TextInputArea

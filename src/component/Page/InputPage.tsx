@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import RootState from '../../state';
 import { Redirect } from 'react-router-dom';
 import { getTexts } from '../../action/Texts/ActionCreator';
-import FormsAndButton from '../Organisms/FormsAndButton';
+import TextInputArea from '../Organisms/TextInputArea';
 
 const InputPage: React.FC = () => {
   const isLoggedIn = useSelector<RootState, RootState['user']['isLoggedIn']>(state => state.user.isLoggedIn);
@@ -15,7 +15,7 @@ const InputPage: React.FC = () => {
     <div>
       {!isLoggedIn && <Redirect to={'/login'} />}
       input page
-      <FormsAndButton />
+      <TextInputArea />
     </div>
   )
 }
