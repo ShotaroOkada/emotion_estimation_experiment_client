@@ -1,8 +1,8 @@
 import React from 'react';
 import EvaluationPage from './Page/EvaluationPage';
-// import LoginPage from './Page/LoginPage';
-// import { Switch, Route } from 'react-router-dom';
-// import InputPage from './Page/InputPage';
+import LoginPage from './Page/LoginPage';
+import { Switch, Route } from 'react-router-dom';
+import InputPage from './Page/InputPage';
 
 const App: React.FC = () => {
   return (

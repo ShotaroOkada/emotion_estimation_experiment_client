@@ -1,9 +1,10 @@
-import { Algorithm } from './Model'
+import { AlgoName } from '../../state/Emotions'
 import Axios from '../Axios'
 
 export type PostEvaluationsParam = {
-  [algorithm in Algorithm]: {
+  [algo_name in AlgoName]: {
     text: string,
+    previous_flag: boolean,
     emotion_category: string,
     emotion_name: string,
     evaluation_id: string
@@ -12,7 +13,7 @@ export type PostEvaluationsParam = {
 
 export async function postEvaluationsApi(user_id: string, evaluation: PostEvaluationsParam) {
   try {
-    return await Axios.post('./evaluation', {
+    return await Axios.post('/evaluation', {
       headers: {
         user_id
       },

@@ -1,14 +1,15 @@
 import React from 'react';
 import { default as Select, ValueType } from 'react-select';
+import { AlgoName } from '../../state/Emotions';
 
 export type Option = {
-  algo_name: string | null,
+  algo_name: AlgoName | null,
   value: string | null,
   label: string | null
 }
 
 type Props = {
-  algo_name: string
+  algo_name: AlgoName
   selectedOption: Option
   handleChange: (seletedOption: ValueType<Option>) => void
 }
