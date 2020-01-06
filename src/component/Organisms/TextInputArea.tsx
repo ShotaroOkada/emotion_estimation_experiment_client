@@ -3,9 +3,11 @@ import Forms from '../Molecule/Forms';
 import Button from '../Atom/Button'
 import { useDispatch } from 'react-redux';
 import { addInputTextsRequest } from '../../action/Texts/ActionCreator';
+import { useHistory } from 'react-router-dom';
 
 const TextInputArea: React.FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [inputTexts, setInputTexts] = useState({
     a: '', b: '', c: '', d: '', e: ''
   })
@@ -15,7 +17,8 @@ const TextInputArea: React.FC = () => {
   }
 
   const onClick = () => {
-    dispatch(addInputTextsRequest(inputTexts))
+    dispatch(addInputTextsRequest(inputTexts));
+    history.push('/evaluation');
   }
 
   return (
