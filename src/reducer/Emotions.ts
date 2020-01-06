@@ -1,29 +1,17 @@
-import Emotions from "../state/Emotions";
+import Emotions, { AlgoName } from "../state/Emotions";
 import EmotionAction from "../action/Emotions/Action";
 import EmotionActionType from "../action/Emotions/ActionType";
 
 const initialState: Emotions = {
-  estimatedEmotions: {
-    nlu_algo: {
-      algo_name: "nlu_algo",
-      text: "月曜日の朝から講義がある",
-      previous_flag: true,
-      emotion_category: "anger",
-      emotion_name: "苛立ち"
-    },
-    emotion_parameter_algo: {
-      algo_name: "emotion_parameter_algo",
-      text: "月曜日の朝から講義がある",
-      previous_flag: true,
-      emotion_category: "anger",
-      emotion_name: "苛立ち"
-    },
-    feedback_algo: {
-      algo_name: "feedback_algo",
-      text: "月曜日の朝から講義がある",
-      previous_flag: true,
-      emotion_category: "anger",
-      emotion_name: "苛立ち"
+  estimatedInfo: {
+    text: "",
+    previous_flag: false,
+    algorithms: {
+      feedback_algo: {
+        emotion_category: "",
+        emotion_name: "",
+        algo_name: AlgoName.FEEDBACK_ALGO
+      }
     }
   },
   isLoading: false
@@ -39,7 +27,7 @@ export default (state: Emotions = initialState, action: EmotionAction): Emotions
     case EmotionActionType.GET_EMOTION_SUCCESS:
       return {
         ...state,
-        estimatedEmotions: { ...action.payload },
+        estimatedInfo: { ...action.payload },
         isLoading: false
       }
     case EmotionActionType.GET_EMOTION_FAIL:

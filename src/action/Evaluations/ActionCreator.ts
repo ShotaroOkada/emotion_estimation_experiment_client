@@ -1,9 +1,9 @@
 import { createAsyncAction } from "typesafe-actions";
 import EvaluationActionType from "./ActionType";
-import { PostEvaluationsParam } from "../../api/Evaluations/PostEvaluationApi";
+import { SelectedOptions } from "../../component/Organisms/EmotionEvaluationArea";
 
 export const postEvaluations = createAsyncAction(
   EvaluationActionType.POST_EVALUATIONS_REQUEST,
   EvaluationActionType.POST_EVALUATIONS_SUCCESS,
   EvaluationActionType.POST_EVALUATIONS_FAIL
-)<PostEvaluationsParam, undefined, Error>();
+)<SelectedOptions, undefined, Error>();
