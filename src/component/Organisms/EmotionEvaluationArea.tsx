@@ -13,7 +13,7 @@ type SelectedOptions = {
 }
 
 const EmotionEvaluationArea = () => {
-  const emotions = useSelector<RootState, RootState['emotions']>(state => state.emotions)
+  const estimatedEmotions = useSelector<RootState, RootState['emotions']['estimatedEmotions']>(state => state.emotions.estimatedEmotions)
   const dispatch = useDispatch();
   const initialSelectedOption: SelectedOptions = {
     nlu_algo: {
@@ -39,27 +39,27 @@ const EmotionEvaluationArea = () => {
     })
   }
   const onClick = () => {
-    if (Object.keys(selectedOptions).length !== Object.keys(emotions).length) return;
+    if (Object.keys(selectedOptions).length !== Object.keys(estimatedEmotions).length) return;
     const postEvaluationsParam: PostEvaluationsParam = {
       nlu_algo: {
-        text: emotions['nlu_algo'].text,
-        previous_flag: emotions['nlu_algo'].previous_flag,
-        emotion_category: emotions['nlu_algo'].emotion_category,
-        emotion_name: emotions['nlu_algo'].emotion_name,
+        text: estimatedEmotions['nlu_algo'].text,
+        previous_flag: estimatedEmotions['nlu_algo'].previous_flag,
+        emotion_category: estimatedEmotions['nlu_algo'].emotion_category,
+        emotion_name: estimatedEmotions['nlu_algo'].emotion_name,
         evaluation_id: selectedOptions['nlu_algo'].value as string,
       },
       emotion_parameter_algo: {
-        text: emotions['emotion_parameter_algo'].text,
-        previous_flag: emotions['emotion_parameter_algo'].previous_flag,
-        emotion_category: emotions['emotion_parameter_algo'].emotion_category,
-        emotion_name: emotions['emotion_parameter_algo'].emotion_name,
+        text: estimatedEmotions['emotion_parameter_algo'].text,
+        previous_flag: estimatedEmotions['emotion_parameter_algo'].previous_flag,
+        emotion_category: estimatedEmotions['emotion_parameter_algo'].emotion_category,
+        emotion_name: estimatedEmotions['emotion_parameter_algo'].emotion_name,
         evaluation_id: selectedOptions['emotion_parameter_algo'].value as string,
       },
       feedback_algo: {
-        text: emotions['feedback_algo'].text,
-        previous_flag: emotions['feedback_algo'].previous_flag,
-        emotion_category: emotions['feedback_algo'].emotion_category,
-        emotion_name: emotions['feedback_algo'].emotion_name,
+        text: estimatedEmotions['feedback_algo'].text,
+        previous_flag: estimatedEmotions['feedback_algo'].previous_flag,
+        emotion_category: estimatedEmotions['feedback_algo'].emotion_category,
+        emotion_name: estimatedEmotions['feedback_algo'].emotion_name,
         evaluation_id: selectedOptions['feedback_algo'].value as string,
       }
     }
@@ -67,11 +67,11 @@ const EmotionEvaluationArea = () => {
   }
   return (
     <div style={{ width: '30%' }}>
-      <div>{emotions['nlu_algo'].text}</div>
-      {(Object.keys(emotions) as Array<AlgoName>).map(key => {
+      <div>{estimatedEmotions['nlu_algo'].text}</div>
+      {(Object.keys(estimatedEmotions) as Array<AlgoName>).map(key => {
         return (
           <div key={key}>
-            {emotions[key].emotion_name}
+            {estimatedEmotions[key].emotion_name}
             <SelectBox algo_name={key} selectedOption={selectedOptions[key]} handleChange={handleChange} />
           </div>
         )

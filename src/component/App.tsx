@@ -7,11 +7,11 @@ import InputPage from './Page/InputPage';
 const App: React.FC = () => {
   return (
     <div>
-      {/* <Switch>
+      <Switch>
         <Route exact path='/login' component={LoginPage} />
         <Route exact path='/' component={InputPage} />
-      </Switch> */}
-      <EvaluationPage />
+        <Route exact path='/evaluation' component={EvaluationPage} />
+      </Switch>
     </div>
   );
 }

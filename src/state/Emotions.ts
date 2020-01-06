@@ -4,7 +4,7 @@ export enum AlgoName {
   FEEDBACK_ALGO = 'feedback_algo'
 }
 
-type Emotions = {
+type EstimatedEmotions = {
   [algo_name in AlgoName]: {
     algo_name: string,
     text: string,
@@ -12,6 +12,11 @@ type Emotions = {
     emotion_category: string,
     emotion_name: string
   }
+}
+
+type Emotions = {
+  estimatedEmotions: EstimatedEmotions
+  isLoading: boolean
 }
 
 export default Emotions
