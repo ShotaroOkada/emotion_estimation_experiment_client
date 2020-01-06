@@ -16,6 +16,10 @@ export default (state: Texts = initialState, action: TextAction): Texts => {
         ...state,
         ...action.payload
       ]
+    case TextActionType.DELETE_FIRST_TEXT:
+      return [
+        ...state.slice(1)
+      ]
     default:
       return state;
   }

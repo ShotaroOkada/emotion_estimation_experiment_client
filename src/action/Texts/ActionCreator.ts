@@ -18,4 +18,9 @@ export const addInputedTexts = createAction(
 
 export const addInputTextsRequest = createAction(
   TextActionType.ADD_INPUTED_TEXTS_REQUEST
-)<{ [key: string]: string }>()
+)<{ [key: string]: string }>();
+
+export const deleteFirstText = createAction(
+  TextActionType.DELETE_FIRST_TEXT
+)<undefined>();
+

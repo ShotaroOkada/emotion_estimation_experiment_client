@@ -14,7 +14,6 @@ const InputPage: React.FC = () => {
   return (
     <div>
       {!isLoggedIn && <Redirect to={'/login'} />}
-      input page
       <TextInputArea />
     </div>
   )
