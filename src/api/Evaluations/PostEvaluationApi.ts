@@ -1,4 +1,3 @@
-import { AlgoName } from '../../state/Emotions'
 import Axios from '../Axios'
 
 type EvaluationAlgorithm = {

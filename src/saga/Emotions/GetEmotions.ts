@@ -8,15 +8,15 @@ export function* getEmotionsSaga(action: ReturnType<typeof getEmotions.request>)
   const state: RootState = yield select();
   const user_id = state.user.id;
 
-  const response: PromiseGenericType<ReturnType<typeof getEmotionsApi>> = yield call(
-    getEmotionsApi,
-    user_id,
-    action.payload
-  );
-
-  if (response.status === 200 && response.data) {
+  try {
+    const response: PromiseGenericType<ReturnType<typeof getEmotionsApi>> = yield call(
+      getEmotionsApi,
+      user_id,
+      action.payload
+    );
     yield put(getEmotions.success(response.data));
-  } else {
+  }
+  catch (e) {
     yield put(getEmotions.failure(new Error('failure get emotions')))
   }
 }
