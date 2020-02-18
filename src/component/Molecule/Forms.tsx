@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
+import Color from '../../style/Color';
+import { FontSize, FontFamily } from '../../style/Font';
 
 type Props = {
   inputTexts: {
@@ -11,12 +14,26 @@ const Forms: React.FC<Props> = (props) => {
   const { inputTexts, handleChange } = props
 
   return (
-    <div>
+    <Container>
       {Object.entries(inputTexts).map(([key, value]) =>
-        <input type="text" key={key} name={key} value={value} onChange={handleChange} />
+        <Input type="text" key={key} name={key} value={value} onChange={handleChange} />
       )}
-    </div>
+    </Container>
   )
 }
 
 export default Forms
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const Input = styled.input`
+  width: 30%;
+  color: ${Color.LightGray};
+  font-size: ${FontSize.Medium}px;
+  font-family: ${FontFamily.Roboto};
+  padding: 5px 7px 5px 3px;
+  margin-bottom: 5px;
+`

@@ -3,6 +3,8 @@ import { login } from '../../action/User/ActionCreator';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import RootState from '../../state';
+import Form from '../Atom/Form';
+import Button from '../Atom/Button';
 
 const LoginPage: React.FC = () => {
   const [inputUserId, setInputUserState] = useState('');
@@ -29,8 +31,8 @@ const LoginPage: React.FC = () => {
 
   return (
     <div>
-      <input type="text" value={inputUserId} onChange={handleInputUserIdChange} />
-      <button onClick={onClick}>ログイン</button>
+      <Form key={"loginForm"} value={inputUserId} onChange={handleInputUserIdChange} />
+      <Button key={"loginButton"} label={"ログイン"} onClick={onClick} />
     </div>
   )
 }
