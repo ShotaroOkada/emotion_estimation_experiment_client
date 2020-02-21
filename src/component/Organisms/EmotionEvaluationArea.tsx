@@ -6,6 +6,8 @@ import { ValueType } from 'react-select/src/types';
 import Button from '../Atom/Button';
 import { AlgoName } from '../../state/Emotions';
 import { postEvaluations } from '../../action/Evaluations/ActionCreator';
+import styled from 'styled-components';
+import { FontSize, FontFamily } from '../../style/Font';
 
 export type SelectedOptions = {
   feedback_algo: Option,
@@ -36,7 +38,7 @@ const EmotionEvaluationArea = () => {
   }
   return (
     <div style={{ width: '30%' }}>
-      <div>{text}</div>
+      <Text>{text}</Text>
       {(Object.keys(estimatedAlgorithms) as Array<AlgoName>).map(key => {
         return (
           <div key={key}>
@@ -51,3 +53,9 @@ const EmotionEvaluationArea = () => {
 }
 
 export default EmotionEvaluationArea
+
+const Text = styled.div`
+  font-size: ${FontSize.Medium};
+  font-family: ${FontFamily.Roboto};
+  text-align: center;
+`
